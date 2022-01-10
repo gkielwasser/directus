@@ -61,7 +61,7 @@ export class AuthenticationService {
 		try {
 			userId = await provider.getUserID(cloneDeep(payload));
 		} catch (e) {
-			emitter.emitFilter(
+			await emitter.emitFilter(
 				'request.error',
 				e,
 				{},
